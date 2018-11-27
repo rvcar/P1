@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 50; i++) {
 
             Monolit m = new Monolit(i, i);
+            m.
 
             pkt_list.add(new Sotoviy((double) i,  (double) i));
 
