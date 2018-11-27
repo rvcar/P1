@@ -30,7 +30,6 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
         s = (Sotoviy) pkt_list.get(position);
 
         holder.plength.setText(String.valueOf((s.getPlength())));
-        holder.pwidth.setText(String.valueOf((s.getPwidth())));
         holder.pdepth.setText(String.valueOf((s.getPdepth())));
     }
 
@@ -44,7 +43,7 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView plength;
-        public TextView pwidth;
+
         public TextView pdepth;
 
 
@@ -52,8 +51,8 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
             super(itemView);
 
             plength = itemView.findViewById(R.id.tv);
-            pwidth = itemView.findViewById(R.id.tv2);
-            pdepth = itemView.findViewById(R.id.tv3);
+
+            pdepth = itemView.findViewById(R.id.tv2);
         }
 
 

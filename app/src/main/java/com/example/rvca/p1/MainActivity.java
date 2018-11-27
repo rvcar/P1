@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < 50; i++) {
 
-            pkt_list.add(new Sotoviy((float) i, (float) i, (float) i));
+            Monolit m = new Monolit(i, i);
+
+            pkt_list.add(new Sotoviy((double) i,  (double) i));
 
         }
 
