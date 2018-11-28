@@ -52,10 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        adapter = new PktListAdapter(pkt_list);
+        adapter = new PktListAdapter(pkt_list, this);
         recyclerView.setAdapter(adapter);
 
     }
-
 
 }

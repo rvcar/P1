@@ -1,12 +1,16 @@
 package com.example.rvca.p1;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
@@ -14,15 +18,17 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
 
     List<Polycarbonate> pkt_list;
     Sotoviy s;
+    Context ctx;
 
-    public PktListAdapter(List<Polycarbonate> pkt_list) {
+    public PktListAdapter(List<Polycarbonate> pkt_list, Context c) {
         this.pkt_list = pkt_list;
+        ctx = c;
     }
 
     @Override
     public PktListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, ctx, pkt_list);
     }
 
     @Override
@@ -41,15 +47,21 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView plength;
 
         public TextView pdepth;
 
+        List<Polycarbonate> p = new ArrayList<Polycarbonate>();
+        Context c;
 
-        public ViewHolder(View itemView) {
+
+        public ViewHolder(View itemView, Context context, List<Polycarbonate> polycarbonates) {
             super(itemView);
+            c = context;
+            p = polycarbonates;
+            itemView.setOnClickListener(this);
 
 
             plength = itemView.findViewById(R.id.tv);
@@ -57,8 +69,14 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
             pdepth = itemView.findViewById(R.id.tv2);
         }
 
+        @Override
+        public void onClick(View v) {
+            int pos = getAdapterPosition();
+            Sotoviy s = (Sotoviy) pkt_list.get(pos);
+            Intent intent = new Intent(c, OrderActivity.class);
+            intent.putExtra("length", s.getPlength());
+            c.startActivity(intent);
 
+        }
     }
-
-
 }
