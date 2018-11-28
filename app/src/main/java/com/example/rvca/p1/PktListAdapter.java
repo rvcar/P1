@@ -11,6 +11,7 @@ import java.util.List;
 
 class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
 
+
     List<Polycarbonate> pkt_list;
     Sotoviy s;
 
@@ -50,6 +51,7 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
 
+
             plength = itemView.findViewById(R.id.tv);
 
             pdepth = itemView.findViewById(R.id.tv2);
@@ -57,4 +59,6 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
 
 
     }
+
+
 }
