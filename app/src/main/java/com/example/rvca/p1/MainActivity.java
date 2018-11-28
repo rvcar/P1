@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton fab;
 
+    LinearLayoutManager llm = new LinearLayoutManager(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerView.setLayoutManager(llm);
+
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                llm.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
 
         fab = findViewById(R.id.floatingActionButtonAdd);
