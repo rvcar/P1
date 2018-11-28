@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +49,9 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView plength;
+        public TextView plength, pdepth;
+        ImageView iv;
 
-        public TextView pdepth;
 
         List<Polycarbonate> p = new ArrayList<Polycarbonate>();
         Context c;
@@ -64,9 +64,11 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
             itemView.setOnClickListener(this);
 
 
-            plength = itemView.findViewById(R.id.tv);
+            iv = itemView.findViewById(R.id.plogo);
 
-            pdepth = itemView.findViewById(R.id.tv2);
+            plength = itemView.findViewById(R.id.textView4);
+
+            pdepth = itemView.findViewById(R.id.textView5);
         }
 
         @Override
