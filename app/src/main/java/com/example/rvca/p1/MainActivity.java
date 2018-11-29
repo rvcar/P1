@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < 50; i++) {
 
-            pkt_list.add(new Sotoviy((double) i, (double) i));
+            pkt_list.add(new Sotoviy("Novattro", (double) i, (double) i));
 
         }
 

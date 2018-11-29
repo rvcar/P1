@@ -36,6 +36,7 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
 
         s = (Sotoviy) pkt_list.get(position);
 
+        holder.title.setText(s.getTitle());
         holder.plength.setText(String.valueOf((s.getPlength())));
         holder.pdepth.setText(String.valueOf((s.getPdepth())));
     }
@@ -49,7 +50,7 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView plength, pdepth;
+        public TextView title, plength, pdepth;
         ImageView iv;
 
 
@@ -65,6 +66,8 @@ class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
 
 
             iv = itemView.findViewById(R.id.plogo);
+
+            title = itemView.findViewById(R.id.tv);
 
             plength = itemView.findViewById(R.id.textView4);
 
