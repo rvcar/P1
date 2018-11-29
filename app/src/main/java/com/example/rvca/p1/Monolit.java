@@ -4,8 +4,8 @@ public class Monolit extends Polycarbonate {
 
     private final double pwidth = 2.05;
 
-    public Monolit(String title, double plength, double pdepth) {
-        super(title, plength, pdepth);
+    public Monolit(String title, String color, double plength, double pdepth) {
+        super(title, color, plength, pdepth);
     }
 
     @Override
@@ -26,6 +26,16 @@ public class Monolit extends Polycarbonate {
     @Override
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public void setColor(String color) {
+            this.color = color;
     }
 
     @Override

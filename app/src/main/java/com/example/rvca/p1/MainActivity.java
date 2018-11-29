@@ -16,15 +16,10 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
 
-    Random r = new Random();
-
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
-
     List<Polycarbonate> pkt_list;
-
     FloatingActionButton fab;
-
     LinearLayoutManager llm = new LinearLayoutManager(this);
 
 
@@ -57,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < 50; i++) {
 
-            pkt_list.add(new Sotoviy("Novattro", (double) i, (double) i));
+            pkt_list.add(new Sotoviy("Novattro", "Бронза", (double) i, (double) i));
 
         }
 

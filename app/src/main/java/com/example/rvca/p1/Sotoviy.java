@@ -6,8 +6,8 @@ public class Sotoviy extends Polycarbonate {
     private final double pwidth = 2.1;
 
 
-    public Sotoviy(String title, double plength, double pdepth) {
-        super(title, plength, pdepth);
+    public Sotoviy(String title, String color, double plength, double pdepth) {
+        super(title, color, plength, pdepth);
     }
 
     public double getPlength() {
@@ -26,6 +26,16 @@ public class Sotoviy extends Polycarbonate {
     @Override
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public double getPdepth() {
