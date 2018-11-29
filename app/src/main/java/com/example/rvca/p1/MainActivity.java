@@ -11,7 +11,6 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        adapter = new PktListAdapter(pkt_list, this);
+        adapter = new PolycarbonateListAdapter(pkt_list, this);
         recyclerView.setAdapter(adapter);
 
     }

@@ -13,26 +13,26 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-class PktListAdapter extends RecyclerView.Adapter<PktListAdapter.ViewHolder> {
+class PolycarbonateListAdapter extends RecyclerView.Adapter<PolycarbonateListAdapter.ViewHolder> {
 
 
     List<Polycarbonate> pkt_list;
     Sotoviy s;
     Context ctx;
 
-    public PktListAdapter(List<Polycarbonate> pkt_list, Context c) {
+    public PolycarbonateListAdapter(List<Polycarbonate> pkt_list, Context c) {
         this.pkt_list = pkt_list;
         ctx = c;
     }
 
     @Override
-    public PktListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PolycarbonateListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row, parent, false);
         return new ViewHolder(view, ctx, pkt_list);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PktListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PolycarbonateListAdapter.ViewHolder holder, int position) {
 
         s = (Sotoviy) pkt_list.get(position);
 
